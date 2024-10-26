@@ -21,7 +21,7 @@ public class Program {
 		clients.add(new Client("Roberto", 18));
 		clients.add(new Client("Pedro", 36));
 		
-		List<String> names = clients.stream().map(Client::staticUpperCaseName).collect(Collectors.toList());
+		List<String> names = clients.stream().map(Client::nonStaticUpperCaseName).collect(Collectors.toList());
 		
 		names.forEach(System.out::println);
 		

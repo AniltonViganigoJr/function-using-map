@@ -36,6 +36,10 @@ public class Client {
 		return client.getName().toUpperCase();
 	}
 	
+	public String nonStaticUpperCaseName() {
+		return name.toUpperCase();
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(age, name);
