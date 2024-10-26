@@ -32,6 +32,10 @@ public class Client {
 		this.age = age;
 	}
 	
+	public static String staticUpperCaseName(Client client) {
+		return client.getName().toUpperCase();
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(age, name);

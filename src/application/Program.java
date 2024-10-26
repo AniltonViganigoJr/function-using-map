@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import entities.Client;
-import utils.UpperCaseName;
 
 public class Program {
 
@@ -22,7 +21,7 @@ public class Program {
 		clients.add(new Client("Roberto", 18));
 		clients.add(new Client("Pedro", 36));
 		
-		List<String> names = clients.stream().map(new UpperCaseName()).collect(Collectors.toList());
+		List<String> names = clients.stream().map(Client::staticUpperCaseName).collect(Collectors.toList());
 		
 		names.forEach(System.out::println);
 		
