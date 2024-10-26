@@ -2,6 +2,7 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import entities.Client;
@@ -21,7 +22,9 @@ public class Program {
 		clients.add(new Client("Roberto", 18));
 		clients.add(new Client("Pedro", 36));
 		
-		List<String> names = clients.stream().map(Client::nonStaticUpperCaseName).collect(Collectors.toList());
+		Function<Client,String> upperCaseNameFunction = c -> c.getName().toUpperCase();
+		
+		List<String> names = clients.stream().map(upperCaseNameFunction).collect(Collectors.toList());
 		
 		names.forEach(System.out::println);
 		
